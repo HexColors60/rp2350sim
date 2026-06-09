@@ -1,0 +1,91 @@
+//! Hazard3 RISC-V LED Blink Example
+//!
+//! This example demonstrates a simple LED blink program for the RP2350
+//! using the Hazard3 RISC-V core. It toggles GPIO pin 25 (the onboard LED).
+//!
+//! ## Building
+//!
+//! ```bash
+//! cargo build --target riscv32imac-unknown-none-elf --example blink_rv32
+//! ```
+//!
+//! ## Running in Simulator
+//!
+//! ```bash
+//! rp2350sim run --arch riscv examples/riscv/blink.bin
+//! ```
+
+#![no_std]
+#![no_main]
+
+use riscv_rt::entry;
+
+/// RP2350 GPIO base address
+const SIO_BASE: u32 = 0xD0000000;
+
+/// SIO registers
+const GPIO_OUT_SET: *mut u32 = (SIO_BASE + 0x014) as *mut u32;
+const GPIO_OUT_CLR: *mut u32 = (SIO_BASE + 0x018) as *mut u32;
+const GPIO_OE_SET: *mut u32 = (SIO_BASE + 0x024) as *mut u32;
+
+/// IO_BANK0 base address  
+const IO_BANK0_BASE: u32 = 0x40028000;
+
+/// GPIO25 control register
+const GPIO25_CTRL: *mut u32 = (IO_BANK0_BASE + 0x0CC) as *mut u32;
+
+/// LED pin number
+const LED_PIN: u32 = 25;
+
+/// Function select for GPIO (SIO = 5)
+const GPIO_FUNC_SIO: u32 = 5;
+
+/// Delay loop iterations
+const DELAY_ITERATIONS: u32 = 500_000;
+
+#[entry]
+fn main() -> ! {
+    // Initialize GPIO 25 as output
+    unsafe {
+        // Set GPIO25 function to SIO
+        GPIO25_CTRL.write_volatile(GPIO_FUNC_SIO);
+        
+        // Set GPIO 25 as output
+        GPIO_OE_SET.write_volatile(1 << LED_PIN);
+    }
+    
+    // Main blink loop
+    loop {
+        // Turn LED on
+        unsafe {
+            GPIO_OUT_SET.write_volatile(1 << LED_PIN);
+        }
+        
+        delay(DELAY_ITERATIONS);
+        
+        // Turn LED off
+        unsafe {
+            GPIO_OUT_CLR.write_volatile(1 << LED_PIN);
+        }
+        
+        delay(DELAY_ITERATIONS);
+    }
+}
+
+/// Simple delay loop
+#[inline(never)]
+fn delay(iterations: u32) {
+    let mut i = iterations;
+    while i > 0 {
+        i -= 1;
+        // NOP for timing
+        unsafe { core::arch::asm!("nop") };
+    }
+}
+
+#[panic_handler]
+fn panic(_info: &core::panic::PanicInfo) -> ! {
+    loop {
+        unsafe { core::arch::asm!("nop") };
+    }
+}

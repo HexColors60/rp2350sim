@@ -1,0 +1,30 @@
+# Fast execution mode configuration
+# Optimized for speed, minimal tracing
+
+[cpu]
+arch = "arm"
+core_count = 2
+clock_hz = 150000000
+
+[execution]
+mode = "fast"
+boot_source = "flash"
+
+[trace]
+enable = false
+mmio = false
+gpio = false
+pio = false
+instruction = false
+
+[usb]
+enable = true
+
+[wlan]
+stub = true
+
+[window]
+width = 1280
+height = 800
+vsync = true
+target_fps = 60

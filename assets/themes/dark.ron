@@ -1,0 +1,40 @@
+// Dark theme for RP2350 Simulator
+
+(
+    name: "dark",
+    
+    // Background colors
+    background: (r: 0.1, g: 0.1, b: 0.12, a: 1.0),
+    panel_bg: (r: 0.15, g: 0.15, b: 0.17, a: 1.0),
+    surface: (r: 0.2, g: 0.2, b: 0.22, a: 1.0),
+    
+    // Text colors
+    text_primary: (r: 0.95, g: 0.95, b: 0.95, a: 1.0),
+    text_secondary: (r: 0.7, g: 0.7, b: 0.7, a: 1.0),
+    text_muted: (r: 0.5, g: 0.5, b: 0.5, a: 1.0),
+    
+    // Accent colors
+    accent_primary: (r: 0.2, g: 0.5, b: 0.9, a: 1.0),
+    accent_secondary: (r: 0.4, g: 0.7, b: 0.3, a: 1.0),
+    accent_warning: (r: 0.9, g: 0.6, b: 0.1, a: 1.0),
+    accent_error: (r: 0.9, g: 0.2, b: 0.2, a: 1.0),
+    
+    // GPIO colors
+    gpio_high: (r: 0.2, g: 0.8, b: 0.2, a: 1.0),
+    gpio_low: (r: 0.3, g: 0.3, b: 0.3, a: 1.0),
+    gpio_floating: (r: 0.5, g: 0.5, b: 0.5, a: 1.0),
+    
+    // Memory colors
+    mem_flash: (r: 0.6, g: 0.4, b: 0.2, a: 1.0),
+    mem_sram: (r: 0.2, g: 0.4, b: 0.6, a: 1.0),
+    mem_mmio: (r: 0.5, g: 0.2, b: 0.5, a: 1.0),
+    
+    // Waveform colors
+    wave_signal: (r: 0.3, g: 0.8, b: 0.3, a: 1.0),
+    wave_clock: (r: 0.8, g: 0.8, b: 0.3, a: 1.0),
+    wave_data: (r: 0.3, g: 0.6, b: 0.9, a: 1.0),
+    
+    // Border
+    border: (r: 0.3, g: 0.3, b: 0.35, a: 1.0),
+    border_active: (r: 0.4, g: 0.5, b: 0.7, a: 1.0),
+)

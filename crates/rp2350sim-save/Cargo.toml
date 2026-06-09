@@ -1,0 +1,15 @@
+[package]
+name = "rp2350sim-save"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde = { workspace = true, features = ["derive"] }
+bincode = "1.3"
+rp2350sim-core = { path = "../rp2350sim-core" }
+rp2350sim-soc = { path = "../rp2350sim-soc" }
+rp2350sim-devices = { path = "../rp2350sim-devices" }

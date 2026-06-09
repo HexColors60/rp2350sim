@@ -1,0 +1,16 @@
+[package]
+name = "rp2350sim-ecs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+bitflags.workspace = true
+parking_lot.workspace = true
+hecs.workspace = true
+rp2350sim-core.workspace = true
+rp2350sim-devices.workspace = true

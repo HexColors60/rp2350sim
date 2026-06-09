@@ -1,0 +1,19 @@
+# WS2812 LED strip virtual device configuration
+
+[device]
+type = "ws2812_strip"
+name = "WS2812 LED Strip"
+
+[connection]
+pio = 0                 # PIO block (0 or 1)
+state_machine = 0       # State machine number
+gpio_pin = 2            # Data pin
+
+[strip]
+led_count = 30          # Number of LEDs in strip
+rgb_order = "grb"       # Color order: "rgb", "grb", "bgr"
+
+[display]
+led_size = 10           # Pixel size for rendering
+spacing = 2             # Space between LEDs
+shape = "circle"        # "circle" or "square"

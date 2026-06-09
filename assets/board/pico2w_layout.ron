@@ -1,0 +1,59 @@
+// Pico 2 W Board Layout
+// Visual layout for rendering
+
+(
+    board_size: (width: 600, height: 200),
+    board_color: (0.1, 0.1, 0.1, 1.0),
+    
+    // USB connector position
+    usb_connector: (
+        position: (x: 50, y: 100),
+        size: (width: 40, height: 60),
+    ),
+    
+    // Pin positions (left side, top to bottom)
+    left_pins: [
+        (pin: 1, gpio: 0, position: (x: 10, y: 20)),
+        (pin: 2, gpio: 1, position: (x: 10, y: 35)),
+        (pin: 3, name: "GND", position: (x: 10, y: 50)),
+        (pin: 4, gpio: 2, position: (x: 10, y: 65)),
+        (pin: 5, gpio: 3, position: (x: 10, y: 80)),
+        (pin: 6, gpio: 4, position: (x: 10, y: 95)),
+        (pin: 7, gpio: 5, position: (x: 10, y: 110)),
+        (pin: 8, name: "GND", position: (x: 10, y: 125)),
+        (pin: 9, gpio: 6, position: (x: 10, y: 140)),
+        (pin: 10, gpio: 7, position: (x: 10, y: 155)),
+        (pin: 11, gpio: 8, position: (x: 10, y: 170)),
+        (pin: 12, gpio: 9, position: (x: 10, y: 185)),
+    ],
+    
+    // Pin positions (right side, top to bottom)
+    right_pins: [
+        (pin: 40, name: "VBUS", position: (x: 590, y: 20)),
+        (pin: 39, name: "VSYS", position: (x: 590, y: 35)),
+        (pin: 38, name: "GND", position: (x: 590, y: 50)),
+        (pin: 37, gpio: 29, position: (x: 590, y: 65)),
+        (pin: 36, gpio: 28, position: (x: 590, y: 80)),
+        (pin: 35, gpio: 27, position: (x: 590, y: 95)),
+        (pin: 34, gpio: 26, position: (x: 590, y: 110)),
+        (pin: 33, name: "GND", position: (x: 590, y: 125)),
+        (pin: 32, gpio: 25, position: (x: 590, y: 140)),
+        (pin: 31, gpio: 24, position: (x: 590, y: 155)),
+        (pin: 30, name: "RUN", position: (x: 590, y: 170)),
+        (pin: 29, gpio: 23, position: (x: 590, y: 185)),
+    ],
+    
+    // Onboard LED
+    led: (
+        gpio: 25,
+        position: (x: 300, y: 50),
+        size: 8,
+    ),
+    
+    // Wireless module indicator
+    wireless_module: (
+        position: (x: 400, y: 80),
+        size: (width: 80, height: 40),
+        label: "CYW43439",
+    ),
+)

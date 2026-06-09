@@ -1,0 +1,78 @@
+[package]
+name = "rp2350sim-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "rp2350sim"
+path = "src/main.rs"
+
+[features]
+default = ["gui-macroquad"]
+
+# GUI backend selection (mutually exclusive)
+gui-macroquad = ["dep:macroquad", "dep:egui", "dep:egui-macroquad"]
+gui-bevy = ["dep:bevy", "dep:bevy_egui"]
+gui-winapi = ["dep:winapi", "dep:winit", "dep:egui", "dep:egui-winit", "dep:egui-wgpu", "dep:wgpu", "dep:pollster"]
+
+# Headless mode (no GUI)
+headless = []
+
+[dependencies]
+# Core dependencies
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+serde.workspace = true
+toml.workspace = true
+ron.workspace = true
+bitflags.workspace = true
+parking_lot.workspace = true
+clap.workspace = true
+shellexpand.workspace = true
+hecs.workspace = true
+
+# Internal crates
+rp2350sim-core.workspace = true
+rp2350sim-bus.workspace = true
+rp2350sim-mem.workspace = true
+rp2350sim-soc.workspace = true
+rp2350sim-cpu-common.workspace = true
+rp2350sim-cpu-arm.workspace = true
+rp2350sim-cpu-hazard3.workspace = true
+rp2350sim-clocks.workspace = true
+rp2350sim-irq.workspace = true
+rp2350sim-devices.workspace = true
+rp2350sim-virtual-devices.workspace = true
+rp2350sim-debug.workspace = true
+rp2350sim-trace.workspace = true
+rp2350sim-save.workspace = true
+rp2350sim-difftest.workspace = true
+rp2350sim-gpu.workspace = true
+rp2350sim-ecs.workspace = true
+rp2350sim-ui.workspace = true
+rp2350sim-scripting.workspace = true
+rp2350sim-project.workspace = true
+rp2350sim-gdb.workspace = true
+
+# Macroquad/egui GUI (default)
+macroquad = { workspace = true, optional = true }
+egui = { workspace = true, optional = true }
+egui-macroquad = { workspace = true, optional = true }
+
+# Bevy GUI
+bevy = { workspace = true, optional = true }
+bevy_egui = { workspace = true, optional = true }
+
+# WinAPI native GUI
+winapi = { workspace = true, optional = true }
+winit = { workspace = true, optional = true }
+egui-winit = { workspace = true, optional = true }
+egui-wgpu = { workspace = true, optional = true }
+wgpu = { workspace = true, optional = true }
+pollster = { workspace = true, optional = true }
+
+[target.'cfg(windows)'.dependencies]
+winapi = { workspace = true, optional = true, features = ["winuser", "wingdi", "windef", "libloaderapi", "dwrite", "d2d1", "objbase"] }

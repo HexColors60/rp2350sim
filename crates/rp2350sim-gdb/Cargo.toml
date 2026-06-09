@@ -1,0 +1,12 @@
+[package]
+name = "rp2350sim-gdb"
+version = "0.1.0"
+edition = "2021"
+description = "GDB remote stub for RP2350 simulator"
+license = "MIT"
+
+[dependencies]
+rp2350sim-core = { path = "../rp2350sim-core" }
+rp2350sim-cpu-common = { path = "../rp2350sim-cpu-common" }
+log = "0.4"
+thiserror = "1.0"

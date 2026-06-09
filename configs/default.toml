@@ -1,0 +1,28 @@
+# Default configuration for RP2350 simulator
+
+[cpu]
+arch = "arm"           # "arm" or "hazard3"
+core_count = 2
+clock_hz = 150000000
+
+[execution]
+mode = "fast"          # "fast", "debug", "peripheral", "trace"
+boot_source = "flash"  # "flash", "sram", "usb"
+
+[trace]
+enable = false
+mmio = false
+gpio = false
+pio = false
+
+[usb]
+enable = true
+
+[wlan]
+stub = true
+
+[window]
+width = 1280
+height = 800
+vsync = true
+target_fps = 60

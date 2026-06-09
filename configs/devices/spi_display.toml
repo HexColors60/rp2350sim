@@ -1,0 +1,21 @@
+# SPI Display virtual device configuration
+
+[device]
+type = "spi_display"
+name = "SPI Display"
+
+[connection]
+spi = 0                 # SPI block (0 or 1)
+cs_pin = 5              # Chip select GPIO pin
+dc_pin = 6              # Data/Command GPIO pin
+reset_pin = 7           # Reset GPIO pin (optional)
+
+[display]
+width = 128
+height = 128
+color_depth = 16        # Bits per pixel (16 = RGB565)
+rotation = 0            # 0, 90, 180, 270
+
+[driver]
+type = "st7735"         # Display driver IC
+init_sequence = true    # Send init sequence on reset

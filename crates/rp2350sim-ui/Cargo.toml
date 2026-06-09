@@ -1,0 +1,25 @@
+[package]
+name = "rp2350sim-ui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+ron.workspace = true
+bitflags.workspace = true
+parking_lot.workspace = true
+macroquad.workspace = true
+egui.workspace = true
+egui-macroquad.workspace = true
+rp2350sim-core.workspace = true
+rp2350sim-soc.workspace = true
+rp2350sim-cpu-common.workspace = true
+rp2350sim-devices.workspace = true
+rp2350sim-debug.workspace = true
+rp2350sim-trace.workspace = true
+rp2350sim-gpu.workspace = true
+rp2350sim-ecs.workspace = true

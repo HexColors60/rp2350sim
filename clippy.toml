@@ -1,0 +1,9 @@
+[target.'cfg(all())']
+rustflags = [
+    "-A", "clippy::too_many_arguments",
+    "-A", "clippy::type_complexity",
+]
+
+[lints.clippy]
+pedantic = "warn"
+nursery = "warn"

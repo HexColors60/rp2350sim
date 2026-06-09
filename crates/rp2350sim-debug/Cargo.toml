@@ -1,0 +1,23 @@
+[package]
+name = "rp2350sim-debug"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+bitflags.workspace = true
+parking_lot.workspace = true
+goblin.workspace = true
+object.workspace = true
+gimli.workspace = true
+addr2line.workspace = true
+rp2350sim-core.workspace = true
+rp2350sim-cpu-common.workspace = true
+rp2350sim-cpu-arm.workspace = true
+rp2350sim-cpu-hazard3.workspace = true
+rp2350sim-bus.workspace = true
+rp2350sim-mem.workspace = true

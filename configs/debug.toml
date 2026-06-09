@@ -1,0 +1,35 @@
+# Debug execution mode configuration
+# Full tracing and debugging support
+
+[cpu]
+arch = "arm"
+core_count = 2
+clock_hz = 150000000
+
+[execution]
+mode = "debug"
+boot_source = "flash"
+
+[trace]
+enable = true
+mmio = true
+gpio = true
+pio = true
+instruction = true
+
+[debugger]
+break_on_reset = false
+break_on_fault = true
+auto_disasm = true
+
+[usb]
+enable = true
+
+[wlan]
+stub = true
+
+[window]
+width = 1600
+height = 900
+vsync = true
+target_fps = 60

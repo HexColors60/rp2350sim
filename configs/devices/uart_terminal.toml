@@ -1,0 +1,21 @@
+# UART Terminal virtual device configuration
+
+[device]
+type = "uart_terminal"
+name = "UART Terminal"
+
+[connection]
+uart = 0                # UART0 or UART1
+baud = 115200
+
+[terminal]
+echo = true
+local_echo = true
+line_buffer = true
+history_size = 1000
+
+[display]
+font_size = 14
+rows = 25
+cols = 80
+scrollback = 1000

@@ -1,0 +1,144 @@
+[package]
+name = "rp2350sim"
+version = "0.1.0"
+edition = "2021"
+description = "RP2350 Pico 2 W Full-System Simulator"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/user/rp2350sim"
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/rp2350sim-app",
+    "crates/rp2350sim-core",
+    "crates/rp2350sim-bus",
+    "crates/rp2350sim-mem",
+    "crates/rp2350sim-soc",
+    "crates/rp2350sim-cpu-common",
+    "crates/rp2350sim-cpu-arm",
+    "crates/rp2350sim-cpu-hazard3",
+    "crates/rp2350sim-clocks",
+    "crates/rp2350sim-irq",
+    "crates/rp2350sim-devices",
+    "crates/rp2350sim-virtual-devices",
+    "crates/rp2350sim-debug",
+    "crates/rp2350sim-trace",
+    "crates/rp2350sim-save",
+    "crates/rp2350sim-difftest",
+    "crates/rp2350sim-gpu",
+    "crates/rp2350sim-ecs",
+    "crates/rp2350sim-ui",
+    "crates/rp2350sim-scripting",
+    "crates/rp2350sim-project",
+    "crates/rp2350sim-gdb",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/user/rp2350sim"
+rust-version = "1.75"
+
+[workspace.dependencies]
+# Core dependencies
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+ron = "0.8"
+toml = "0.8"
+bitflags = "2.4"
+bytemuck = "1.14"
+parking_lot = "0.12"
+crossbeam = "0.8"
+clap = { version = "4.4", features = ["derive"] }
+shellexpand = "3.1"
+
+# Serialization
+postcard = { version = "1.0", features = ["alloc"] }
+bincode = "1.3"
+
+# Graphics and UI
+macroquad = "0.4"
+egui = "0.27"
+egui-macroquad = "0.17"
+hecs = "0.10"
+
+# Bevy GUI (use bevy 0.13 for better Windows compatibility)
+bevy = { version = "0.13", default-features = false, features = [
+    "bevy_core_pipeline",
+    "bevy_pbr",
+    "bevy_render",
+    "bevy_sprite",
+    "bevy_text",
+    "bevy_ui",
+    "multi-threaded",
+    "png",
+    "x11",
+    "bevy_winit",
+] }
+bevy_egui = "0.27"
+
+# Native GUI (WinAPI/wgpu)
+winapi = "0.3"
+winit = "0.29"
+egui-winit = "0.27"
+egui-wgpu = "0.27"
+wgpu = "0.19"
+pollster = "0.3"
+
+# ELF/Binary parsing
+goblin = "0.8"
+object = "0.32"
+gimli = "0.28"
+addr2line = "0.21"
+
+# Scripting
+rhai = "1.17"
+
+# Internal crates
+rp2350sim-core = { path = "crates/rp2350sim-core" }
+rp2350sim-bus = { path = "crates/rp2350sim-bus" }
+rp2350sim-mem = { path = "crates/rp2350sim-mem" }
+rp2350sim-soc = { path = "crates/rp2350sim-soc" }
+rp2350sim-cpu-common = { path = "crates/rp2350sim-cpu-common" }
+rp2350sim-cpu-arm = { path = "crates/rp2350sim-cpu-arm" }
+rp2350sim-cpu-hazard3 = { path = "crates/rp2350sim-cpu-hazard3" }
+rp2350sim-clocks = { path = "crates/rp2350sim-clocks" }
+rp2350sim-irq = { path = "crates/rp2350sim-irq" }
+rp2350sim-devices = { path = "crates/rp2350sim-devices" }
+rp2350sim-virtual-devices = { path = "crates/rp2350sim-virtual-devices" }
+rp2350sim-debug = { path = "crates/rp2350sim-debug" }
+rp2350sim-trace = { path = "crates/rp2350sim-trace" }
+rp2350sim-save = { path = "crates/rp2350sim-save" }
+rp2350sim-difftest = { path = "crates/rp2350sim-difftest" }
+rp2350sim-gpu = { path = "crates/rp2350sim-gpu" }
+rp2350sim-ecs = { path = "crates/rp2350sim-ecs" }
+rp2350sim-ui = { path = "crates/rp2350sim-ui" }
+rp2350sim-scripting = { path = "crates/rp2350sim-scripting" }
+rp2350sim-project = { path = "crates/rp2350sim-project" }
+rp2350sim-gdb = { path = "crates/rp2350sim-gdb" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1
+
+[dev-dependencies]
+rp2350sim-core = { path = "crates/rp2350sim-core" }
+rp2350sim-soc = { path = "crates/rp2350sim-soc" }
+rp2350sim-cpu-common = { path = "crates/rp2350sim-cpu-common" }
+rp2350sim-cpu-arm = { path = "crates/rp2350sim-cpu-arm" }
+rp2350sim-cpu-hazard3 = { path = "crates/rp2350sim-cpu-hazard3" }
+rp2350sim-devices = { path = "crates/rp2350sim-devices" }
+rp2350sim-save = { path = "crates/rp2350sim-save" }
+rp2350sim-trace = { path = "crates/rp2350sim-trace" }
+rp2350sim-gdb = { path = "crates/rp2350sim-gdb" }
+rp2350sim-debug = { path = "crates/rp2350sim-debug" }

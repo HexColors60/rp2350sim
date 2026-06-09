@@ -1,0 +1,35 @@
+# Peripheral timing mode configuration
+# Accurate peripheral timing for firmware testing
+
+[cpu]
+arch = "arm"
+core_count = 2
+clock_hz = 150000000
+
+[execution]
+mode = "peripheral"
+boot_source = "flash"
+
+[trace]
+enable = true
+mmio = true
+gpio = true
+pio = false
+instruction = false
+
+[timing]
+peripheral_delays = true
+bus_wait_states = true
+accurate_baud = true
+
+[usb]
+enable = true
+
+[wlan]
+stub = true
+
+[window]
+width = 1280
+height = 800
+vsync = true
+target_fps = 60

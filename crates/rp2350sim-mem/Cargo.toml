@@ -1,0 +1,17 @@
+[package]
+name = "rp2350sim-mem"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+bitflags.workspace = true
+parking_lot.workspace = true
+goblin.workspace = true
+object.workspace = true
+rp2350sim-core.workspace = true
+rp2350sim-bus.workspace = true

@@ -1,0 +1,50 @@
+// Pico 2 W Pin Map
+// GPIO to physical pin mapping
+
+{
+    "pins": [
+        {"gpio": 0, "pin": 1, "name": "GP0", "functions": ["GPIO", "UART0_TX", "I2C0_SDA", "SPI0_RX"]},
+        {"gpio": 1, "pin": 2, "name": "GP1", "functions": ["GPIO", "UART0_RX", "I2C0_SCL", "SPI0_CS"]},
+        {"gpio": 2, "pin": 4, "name": "GP2", "functions": ["GPIO", "UART0_CTS", "I2C1_SDA", "SPI0_SCK"]},
+        {"gpio": 3, "pin": 5, "name": "GP3", "functions": ["GPIO", "UART0_RTS", "I2C1_SCL", "SPI0_TX"]},
+        {"gpio": 4, "pin": 6, "name": "GP4", "functions": ["GPIO", "UART1_TX", "I2C0_SDA", "SPI0_RX"]},
+        {"gpio": 5, "pin": 7, "name": "GP5", "functions": ["GPIO", "UART1_RX", "I2C0_SCL", "SPI0_CS"]},
+        {"gpio": 6, "pin": 9, "name": "GP6", "functions": ["GPIO", "UART1_CTS", "I2C1_SDA", "SPI0_SCK"]},
+        {"gpio": 7, "pin": 10, "name": "GP7", "functions": ["GPIO", "UART1_RTS", "I2C1_SCL", "SPI0_TX"]},
+        {"gpio": 8, "pin": 11, "name": "GP8", "functions": ["GPIO", "UART1_TX", "I2C0_SDA", "SPI1_RX"]},
+        {"gpio": 9, "pin": 12, "name": "GP9", "functions": ["GPIO", "UART1_RX", "I2C0_SCL", "SPI1_CS"]},
+        {"gpio": 10, "pin": 14, "name": "GP10", "functions": ["GPIO", "UART1_CTS", "I2C1_SDA", "SPI1_SCK"]},
+        {"gpio": 11, "pin": 15, "name": "GP11", "functions": ["GPIO", "UART1_RTS", "I2C1_SCL", "SPI1_TX"]},
+        {"gpio": 12, "pin": 16, "name": "GP12", "functions": ["GPIO", "UART0_TX", "I2C0_SDA", "SPI1_RX"]},
+        {"gpio": 13, "pin": 17, "name": "GP13", "functions": ["GPIO", "UART0_RX", "I2C0_SCL", "SPI1_CS"]},
+        {"gpio": 14, "pin": 19, "name": "GP14", "functions": ["GPIO", "UART0_CTS", "I2C1_SDA", "SPI1_SCK"]},
+        {"gpio": 15, "pin": 20, "name": "GP15", "functions": ["GPIO", "UART0_RTS", "I2C1_SCL", "SPI1_TX"]},
+        {"gpio": 16, "pin": 21, "name": "GP16", "functions": ["GPIO", "UART0_TX", "I2C0_SDA", "SPI0_RX"]},
+        {"gpio": 17, "pin": 22, "name": "GP17", "functions": ["GPIO", "UART0_RX", "I2C0_SCL", "SPI0_CS"]},
+        {"gpio": 18, "pin": 24, "name": "GP18", "functions": ["GPIO", "UART0_CTS", "I2C1_SDA", "SPI0_SCK"]},
+        {"gpio": 19, "pin": 25, "name": "GP19", "functions": ["GPIO", "UART0_RTS", "I2C1_SCL", "SPI0_TX"]},
+        {"gpio": 20, "pin": 26, "name": "GP20", "functions": ["GPIO", "UART1_TX", "I2C0_SDA", "SPI0_RX"]},
+        {"gpio": 21, "pin": 27, "name": "GP21", "functions": ["GPIO", "UART1_RX", "I2C0_SCL", "SPI0_CS"]},
+        {"gpio": 22, "pin": 29, "name": "GP22", "functions": ["GPIO", "UART1_CTS", "I2C1_SDA", "SPI0_SCK"]},
+        {"gpio": 23, "pin": 0, "name": "GP23", "functions": ["GPIO"]},
+        {"gpio": 24, "pin": 0, "name": "GP24", "functions": ["GPIO"]},
+        {"gpio": 25, "pin": 0, "name": "GP25", "functions": ["GPIO", "LED"], "special": "Onboard LED"},
+        {"gpio": 26, "pin": 31, "name": "GP26", "functions": ["GPIO", "ADC0"]},
+        {"gpio": 27, "pin": 32, "name": "GP27", "functions": ["GPIO", "ADC1"]},
+        {"gpio": 28, "pin": 34, "name": "GP28", "functions": ["GPIO", "ADC2"]},
+        {"gpio": 29, "pin": 0, "name": "GP29", "functions": ["GPIO", "ADC3"]}
+    ],
+    "power_pins": [
+        {"pin": 3, "name": "3V3_EN", "type": "power_enable"},
+        {"pin": 8, "name": "GND", "type": "ground"},
+        {"pin": 13, "name": "GND", "type": "ground"},
+        {"pin": 18, "name": "GND", "type": "ground"},
+        {"pin": 23, "name": "GND", "type": "ground"},
+        {"pin": 28, "name": "GND", "type": "ground"},
+        {"pin": 33, "name": "GND", "type": "ground"},
+        {"pin": 38, "name": "GND", "type": "ground"},
+        {"pin": 30, "name": "RUN", "type": "reset"},
+        {"pin": 39, "name": "VSYS", "type": "power", "voltage": "5V"},
+        {"pin": 40, "name": "VBUS", "type": "usb_power", "voltage": "5V"}
+    ]
+}
